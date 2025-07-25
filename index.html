@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contagem Regressiva para o Bebê!</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #ffe6f0, #fff);
+      text-align: center;
+      padding: 50px;
+      color: #333;
+    }
+    h1 {
+      color: #d63384;
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+    #countdown {
+      font-size: 2em;
+      padding: 20px;
+      background: #fff0f5;
+      border-radius: 20px;
+      box-shadow: 0 0 15px #ffb3cc;
+      display: inline-block;
+      margin-top: 20px;
+    }
+    .footer {
+      margin-top: 40px;
+      font-size: 0.9em;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+  <h1>Estamos esperando um bebê! 👶💞</h1>
+  <p>Faltam exatamente:</p>
+  <div id="countdown">Carregando...</div>
+  <div class="footer">
+    Data estimada de nascimento: <strong>20 de fevereiro de 2025</strong>
+  </div>
+
+  <script>
+    const nascimento = new Date("2025-02-20T00:00:00");
+
+    function atualizarContagem() {
+      const agora = new Date();
+      const tempo = nascimento - agora;
+
+      if (tempo <= 0) {
+        document.getElementById("countdown").innerText = "O bebê já nasceu! 🎉💖";
+        return;
+      }
+
+      const dias = Math.floor(tempo / (1000 * 60 * 60 * 24));
+      const horas = Math.floor((tempo / (1000 * 60 * 60)) % 24);
+      const minutos = Math.floor((tempo / 1000 / 60) % 60);
+      const segundos = Math.floor((tempo / 1000) % 60);
+
+      document.getElementById("countdown").innerText =
+        `${dias} dias, ${horas}h, ${minutos}min, ${segundos}s`;
+    }
+
+    setInterval(atualizarContagem, 1000);
+  </script>
+</body>
+</html>
