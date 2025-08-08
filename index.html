@@ -45,11 +45,11 @@
   </style>
 </head>
 <body>
-  <h1>O pequeno astronauta Oliver está chegando! 🚀🌌</h1>
+  <h1>O pequeno  Oliver está chegando! 🚀🌌</h1>
   <p>Contagem regressiva para o pouso na Terra:</p>
   <div id="countdown">Carregando...</div>
   <div class="footer">
-    Data estimada de nascimento: <strong>20 de fevereiro de 2026</strong>
+    Data estimada de nascimento: <strong>17 de fevereiro de 2026</strong>
   </div>
 
   <div class="space-theme">
@@ -59,7 +59,7 @@
   </div>
 
   <script>
-    const nascimento = new Date("2026-02-20T00:00:00");
+    const nascimento = new Date("2026-02-17T00:00:00");
 
     function atualizarContagem() {
       const agora = new Date();
@@ -82,35 +82,4 @@
     setInterval(atualizarContagem, 1000);
   </script>
 </body>
-</html>  <h1>Estamos esperando um bebê! 👶💞</h1>
-  <p>Faltam exatamente:</p>
-  <div id="countdown">Carregando...</div>
-  <div class="footer">
-    Data estimada de nascimento: <strong>20 de fevereiro de 2026</strong>
-  </div>
-
-  <script>
-    const nascimento = new Date("2026-02-17T00:00:00");
-
-    function atualizarContagem() {
-      const agora = new Date();
-      const tempo = nascimento - agora;
-
-      if (tempo <= 0) {
-        document.getElementById("countdown").innerText = "O bebê já nasceu! 🎉💖";
-        return;
-      }
-
-      const dias = Math.floor(tempo / (1000 * 60 * 60 * 24));
-      const horas = Math.floor((tempo / (1000 * 60 * 60)) % 24);
-      const minutos = Math.floor((tempo / 1000 / 60) % 60);
-      const segundos = Math.floor((tempo / 1000) % 60);
-
-      document.getElementById("countdown").innerText =
-        `${dias} dias, ${horas}h, ${minutos}min, ${segundos}s`;
-    }
-
-    setInterval(atualizarContagem, 1000);
-  </script>
-</body>
-</html>
+</html> 
