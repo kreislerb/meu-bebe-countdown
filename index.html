@@ -3,38 +3,86 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Contagem Regressiva para o Bebê!</title>
+  <title>Contagem Regressiva para o Oliver!</title>
   <style>
     body {
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(to right, #ffe6f0, #fff);
+      background: linear-gradient(to right, #ccefff, #e6f7ff);
+      background-image: url('https://cdn.pixabay.com/photo/2016/02/26/16/32/astronaut-1224449_1280.png');
+      background-repeat: no-repeat;
+      background-position: top right;
+      background-size: 150px;
       text-align: center;
       padding: 50px;
-      color: #333;
+      color: #003366;
     }
     h1 {
-      color: #d63384;
+      color: #0077cc;
       font-size: 2.5em;
       margin-bottom: 10px;
     }
     #countdown {
       font-size: 2em;
       padding: 20px;
-      background: #fff0f5;
+      background: #e0f7ff;
       border-radius: 20px;
-      box-shadow: 0 0 15px #ffb3cc;
+      box-shadow: 0 0 15px #a0dfff;
       display: inline-block;
       margin-top: 20px;
     }
     .footer {
       margin-top: 40px;
       font-size: 0.9em;
-      color: #888;
+      color: #555;
+    }
+    .space-theme {
+      margin-top: 30px;
+    }
+    .space-theme img {
+      max-width: 100px;
+      margin: 10px;
     }
   </style>
 </head>
 <body>
-  <h1>Estamos esperando um bebê! 👶💞</h1>
+  <h1>O pequeno astronauta Oliver está chegando! 🚀🌌</h1>
+  <p>Contagem regressiva para o pouso na Terra:</p>
+  <div id="countdown">Carregando...</div>
+  <div class="footer">
+    Data estimada de nascimento: <strong>20 de fevereiro de 2026</strong>
+  </div>
+
+  <div class="space-theme">
+    <img src="https://cdn.pixabay.com/photo/2016/04/01/10/10/rocket-1298019_960_720.png" alt="Foguete">
+    <img src="https://cdn.pixabay.com/photo/2016/03/31/20/34/space-1293775_960_720.png" alt="Espaço">
+    <img src="https://cdn.pixabay.com/photo/2017/01/31/19/22/space-shuttle-2022480_960_720.png" alt="Ônibus Espacial">
+  </div>
+
+  <script>
+    const nascimento = new Date("2026-02-20T00:00:00");
+
+    function atualizarContagem() {
+      const agora = new Date();
+      const tempo = nascimento - agora;
+
+      if (tempo <= 0) {
+        document.getElementById("countdown").innerText = "O Oliver já pousou na Terra! 👶🚀";
+        return;
+      }
+
+      const dias = Math.floor(tempo / (1000 * 60 * 60 * 24));
+      const horas = Math.floor((tempo / (1000 * 60 * 60)) % 24);
+      const minutos = Math.floor((tempo / 1000 / 60) % 60);
+      const segundos = Math.floor((tempo / 1000) % 60);
+
+      document.getElementById("countdown").innerText =
+        `${dias} dias, ${horas}h, ${minutos}min, ${segundos}s`;
+    }
+
+    setInterval(atualizarContagem, 1000);
+  </script>
+</body>
+</html>  <h1>Estamos esperando um bebê! 👶💞</h1>
   <p>Faltam exatamente:</p>
   <div id="countdown">Carregando...</div>
   <div class="footer">
@@ -42,7 +90,7 @@
   </div>
 
   <script>
-    const nascimento = new Date("2026-02-20T00:00:00");
+    const nascimento = new Date("2026-02-17T00:00:00");
 
     function atualizarContagem() {
       const agora = new Date();
